@@ -1,6 +1,8 @@
 # .coveragerc to control coverage.py
 [run]
-branch = False
+branch = True
+include = *semvercomp/*
+omit = *tests*
 
 [html]
 directory = htmlcov
