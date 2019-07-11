@@ -1,5 +1,7 @@
 class Version():
-	'''Version represents a semantic version number'''
+	"""
+		Version represents a semantic version number
+	"""
 
 	def __init__(self, major=0, minor=0, patch=0):
 		self.major = major
