@@ -5,7 +5,7 @@
 ### Requirements
 - [pyenv](https://github.com/pyenv/pyenv)
 - [pipenv](https://pipenv.readthedocs.io/en/latest/)
-- [Visual Studio Code](https://code.visualstudio.com/) **Recomended**
+- [Visual Studio Code](https://code.visualstudio.com/) **Recommended**
 
 ### Testing
 - Running unit tests
