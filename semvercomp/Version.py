@@ -12,7 +12,7 @@ class Version():
 
 	def parse_version_number(self, version_string):
 		[major, minor, patch] = version_string.split('.')
-		self.major = major
-		self.minor = minor
-		self.patch = patch
+		self.major = int(major)
+		self.minor = int(minor)
+		self.patch = int(patch)
 		self.version_number = self.__str__()

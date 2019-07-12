@@ -11,19 +11,14 @@
 - Running unit tests
 ```bash
 # from repository root directory
-python -m unittest tests/<test_file>.py 
+pytest
 ```
-[More details](https://docs.python.org/3/library/unittest.html#command-line-interface)
 
-- Coverage Report
+- Running test coverage
 ```bash
 # from repository root directory
-coverage run semvercomp/<source_file_to_gather_coverage>.py
+pytest --cov=semvercomp tests/
 
-# report coverage using the CLI
-coverage report -m
-
-# report coverage creating HTML file
-coverage html
+# or with html report
+pytest --cov-report html --cov=semvercomp tests/
 ```
-[More details](https://coverage.readthedocs.io/en/v4.5.x/cmd.html#)
