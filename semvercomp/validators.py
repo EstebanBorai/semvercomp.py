@@ -2,7 +2,8 @@ import re
 
 def validate_version(ver):
 	"""
-		Validate the version tag as string is a valid semver version number
+		Validates the version tag as string to check if
+		it is a valid semver version number
 	"""
 	parts = dict()
 	regexp_str = r'(v)?(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$'
@@ -20,5 +21,3 @@ def validate_version(ver):
 		return (parts, True)
 	except:
 		return (None, False)
-
-validate_version("v30.11.22")
