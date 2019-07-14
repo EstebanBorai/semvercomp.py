@@ -31,6 +31,48 @@ class Version():
 
 		return base
 
+	def __eq__(self, other):
+		if self.has_v != other.has_v:
+			return False
+
+		if self.major != other.major:
+			return False
+
+		if self.minor != other.minor:
+			return False
+
+		if self.patch != other.patch:
+			return False
+		
+		if self.build != other.build:
+			return False
+
+		if self.pre_release != other.pre_release:
+			return False
+
+		return True
+
+	def __gt__(self, other):
+		if self.__eq__(other) == True:
+			return False
+		
+		if self.major == other.major:
+			if self.minor == other.minor:
+				if self.patch > other.patch:
+					return True
+				return False
+			else:
+				if self.minor > other.minor:
+					return True
+				return False
+		else:
+			if self.major > other.major:
+				return True
+			return False
+
+	def __lt__(self, other):
+		return not self.__gt__(other)
+
 	def parse_version_number(self, version_string):
 		(parts, is_ok) = validate_version(version_string)
 

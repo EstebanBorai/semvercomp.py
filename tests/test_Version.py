@@ -62,3 +62,87 @@ def test_Version_raise_invalid_tag_exception():
 		assert ver.parse_version_number(v_string)
 
 	assert str(exc.value) == f'Version string {v_string} is not a valid version tag.'	
+
+def test_Version__eq__true():
+	a = Version(0,13,21,'beta', '332211', True)
+	b = Version(0,13,21,'beta', '332211', True)
+
+	assert a == b
+
+def test_Version__eq__false_has_v():
+	a = Version(0,13,21,'beta', '332211', False)
+	b = Version(0,13,21,'beta', '332211', True)
+
+	assert a != b
+
+def test_Version__eq__false_major():
+	a = Version(1,13,21,'beta', '332211', True)
+	b = Version(0,13,21,'beta', '332211', True)
+
+	assert a != b
+
+def test_Version__eq__false_minor():
+	a = Version(0,1,21,'beta', '332211', True)
+	b = Version(0,13,21,'beta', '332211', True)
+
+	assert a != b
+
+def test_Version__eq__false_patch():
+	a = Version(0,13,23,'beta', '332211', True)
+	b = Version(0,13,21,'beta', '332211', True)
+
+	assert a != b
+
+def test_Version__eq__false_pre_release():
+	a = Version(0,13,21,'12', '332211', True)
+	b = Version(0,13,21,'beta', '332211', True)
+
+	assert a != b
+
+def test_Version__eq__false_build():
+	a = Version(0,13,21,'beta', 'nova-0', True)
+	b = Version(0,13,21,'beta', '332211', True)
+
+	assert a != b
+
+def test_Version__gt__true():
+	a = Version(1, 0, 11, 'beta')
+	b = Version(1, 1, 11)
+
+	assert b > a
+
+def test_Version__gt__equals_():
+	a = Version(1, 1, 1, 'beta')
+	b = Version(1, 1, 1, 'beta')
+
+	assert not a > b
+
+def test_Version__gt__major():
+	a = Version(1, 0, 1)
+	b = Version(0, 0, 1)
+
+	assert a > b
+
+def test_Version__gt__major_false():
+	a = Version(0, 0, 1)
+	b = Version(1, 0, 1)
+
+	assert not a > b
+
+def test_Version__gt__minor():
+	a = Version(1, 11, 1)
+	b = Version(1, 10, 1)
+
+	assert not b > a
+
+def test_Version__gt__patch():
+	a = Version(1, 0, 11)
+	b = Version(1, 0, 10)
+
+	assert a > b
+
+def test_Version__lt__true():
+	a = Version(0, 1, 1)
+	b = Version(0, 1, 0)
+
+	assert b < a
