@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
   name="semvercomp",
-  version="0.1.0",
+  version="0.1.1",
   author="Esteban Borai",
   author_email="estebanborai@outlook.com",
   description="Semantic Version Comparison for Python",
