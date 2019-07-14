@@ -8,17 +8,18 @@ Implementation of a `Version` object with comparison capabilities and tag valida
 pip install semvercomp
 ```
 
-## API
-- Classes
+## Usage
+- [Classes](https://github.com/estebanborai/semvercomp#classes)
 	- [Version](https://github.com/estebanborai/semvercomp)
-- [Comparison of Version Objects](https://github.com/estebanborai/semvercomp)
-- [Validation]()
+- [Comparison of Version Objects](https://github.com/estebanborai/semvercomp#comparison-of-version-objects)
+- [Validation](https://github.com/estebanborai/semvercomp#validation)
 	- [validate_version]()
-- [Utils]()
+- [Utils](https://github.com/estebanborai/semvercomp#utils)
 	- [to_version_list]()
 
 ### Classes
-- `Version(major=0 : int, minor=0 : int, patch=0 : int, pre_release="" : str, patch="" : str, has_v=False : str)`
+#### `Version(major=0 : int, minor=0 : int, patch=0 : int, pre_release="" : str, patch="" : str, has_v=False : str)`
+
 Class `Version` represents a version tag following *semver* conventions.
 A version tag is structured the following way:
 ```
@@ -36,6 +37,7 @@ Value | Name | Description
 Source: [Semantic Versioning 2.0.0](https://semver.org/)
 
 - Public Properties of `Version` Class
+
 Key | Value | Type
 ------------ | ------------- | -------------
 `has_v` | `bool` | Flag for preceding `v` or `V` in version tag
@@ -46,6 +48,7 @@ Key | Value | Type
 `build` | `str` | Build member
 
 - Instance of Version
+
 ```python
 from semvercomp.Version import Version
 
@@ -55,6 +58,7 @@ print(str(ver))
 ```
 
 - Creating a Version object from a version string:
+
 ```python
 from semvercomp.Version import Version
 
@@ -69,7 +73,7 @@ str_v.parse_version_number('v1.0.0-beta')
 
 ### Comparison of Version Objects
 `Version` class implements `__gt__`, `__lt__` and `__eq__` built-in methods to implement comparison.
-- Equal
+#### Equal
 ```python
 from semvercomp.Version import Version
 
@@ -78,7 +82,7 @@ b = Version(1, 0, 0)
 print(a == b) # True
 ```
 
-- Greater
+#### Greater
 ```python
 from semvercomp.Version import Version
 
@@ -87,7 +91,7 @@ b = Version(1, 0, 0)
 print(a > b) # True
 ```
 
-- Lower
+#### Lower
 ```python
 from semvercomp.Version import Version
 
@@ -99,7 +103,7 @@ print(a < b) # True
 ### Validation
 It is possible to validate and gather the different members of a version tag using `validate version` from `semvercomp.validators`.
 
-- `validate_version(version: str): (parts: dict(), is_ok: bool)`
+#### `validate_version(version: str): (parts: dict(), is_ok: bool)`
 Will return a tuple where, the first element is a dictionary with the properties of the given version tag destructured.
 
 The second element in the tuple is a boolean flag that stands as the validation result.
@@ -114,7 +118,7 @@ print(is_ok) # True
 ```
 
 ### Utils
-- `to_version_list(coll: iterable): Version[]`
+#### `to_version_list(coll: iterable): Version[]`
 Create an array of Version objects from an iterable of version tags as strings.
 
 ```python
