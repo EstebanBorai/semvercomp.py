@@ -10,12 +10,15 @@ pip install semvercomp
 
 ## Usage
 - [Classes](https://github.com/estebanborai/semvercomp#classes)
-	- [Version](https://github.com/estebanborai/semvercomp)
+	- [Version](https://github.com/estebanborai/semvercomp#versionmajor0--int-minor0--int-patch0--int-pre_release--str-patch--str-has_vfalse--str)
 - [Comparison of Version Objects](https://github.com/estebanborai/semvercomp#comparison-of-version-objects)
+	- [Equal](https://github.com/estebanborai/semvercomp#equal)
+	- [Greater](https://github.com/estebanborai/semvercomp#greater)
+	- [Lower](https://github.com/estebanborai/semvercomp#lower)
 - [Validation](https://github.com/estebanborai/semvercomp#validation)
-	- [validate_version]()
+	- [validate_version](https://github.com/estebanborai/semvercomp#validate_versionversion-str-parts-dict-is_ok-bool)
 - [Utils](https://github.com/estebanborai/semvercomp#utils)
-	- [to_version_list]()
+	- [to_version_list](https://github.com/estebanborai/semvercomp#to_version_listcoll-iterable-version)
 
 ### Classes
 #### `Version(major=0 : int, minor=0 : int, patch=0 : int, pre_release="" : str, patch="" : str, has_v=False : str)`
@@ -36,7 +39,7 @@ Value | Name | Description
 
 Source: [Semantic Versioning 2.0.0](https://semver.org/)
 
-- Public Properties of `Version` Class
+- Public Properties
 
 Key | Value | Type
 ------------ | ------------- | -------------
